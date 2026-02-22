@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-//const API_BASE_URL = 'http://bank-api.backend.svc.cluster.local:8080';// Update this with your backend URL
+// Get API base URL from environment or use default
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 
 const api = axios.create({
-  // baseURL: API_BASE_URL,
-  baseURL: '', // Use relative URL for development with proxy
+  baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
